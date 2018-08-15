@@ -25,3 +25,6 @@ class stack:
             return None
         else:
             return self.stack[-1]
+        
+    def traverse(self):
+        print(self.stack)
