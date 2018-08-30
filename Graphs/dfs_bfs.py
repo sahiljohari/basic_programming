@@ -23,7 +23,7 @@ class graph:
         # recurse for all the adjacent vertices to this vertex
         for next in self.graph[start] - visited:
             self.dfs(next, visited)
-        # return visited
+        return visited
 
     # function to implement BFS
     def bfs(self, start):
@@ -34,19 +34,19 @@ class graph:
             if vertex not in visited:
                 visited.add(vertex)
                 queue.extend(self.graph[vertex] - visited)
-
+        return visited
 # Driver code
 # Create a graph given in the above diagram
-g = graph()
-g.add_edge('0', '1')
-g.add_edge('0', '2')
-g.add_edge('1', '2')
-g.add_edge('2', '0')
-g.add_edge('2', '3')
-g.add_edge('3', '3')
+# g = graph()
+# g.add_edge('0', '1')
+# g.add_edge('0', '2')
+# g.add_edge('1', '2')
+# g.add_edge('2', '0')
+# g.add_edge('2', '3')
+# g.add_edge('3', '3')
  
-print ("Following is DFS from (starting from vertex 2)")
-g.dfs('2')
+# print ("Following is DFS from (starting from vertex 2)")
+# g.dfs('2')
 
-print ("Following is Breadth-first traversal from (starting from vertex 2)")
-g.bfs('2')
+# print ("Following is Breadth-first traversal from (starting from vertex 2)")
+# g.bfs('2')
