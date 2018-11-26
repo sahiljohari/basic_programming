@@ -85,8 +85,40 @@ class sort:
 
         return arr
 
+    # Quick sort
+    def quick_sort(self, arr):
+        self.quick_sort_helper(arr, 0, len(arr)-1)
+        
+    def quick_sort_helper(self, arr, first, last):
+        if first < last:
+            split_point = self.partition(arr, first, last)
+            self.quick_sort_helper(arr, first, split_point-1)
+            self.quick_sort_helper(arr, split_point+1, last)
+
+    def partition(self, arr, first, last):
+        pivot = arr[first]
+        left_mark = first+1
+        right_mark = last
+
+        done = False
+        while not done:
+            while left_mark <= right_mark and arr[left_mark] <= pivot:
+                left_mark += 1
+            while right_mark >= left_mark and arr[right_mark] >= pivot:
+                right_mark -= 1
+            if right_mark < left_mark:
+                done = True
+            else:
+                arr[left_mark], arr[right_mark] = arr[right_mark], arr[left_mark]
+            
+        arr[first], arr[right_mark] = arr[right_mark], arr[first]
+
+        return right_mark
+
 if __name__=='__main__':
     s = sort()
     arr = [19, 1, 9, 7, 3, 10, 13, 15, 8, 12]
     arr1 = [11, 7, 12, 14, 19, 1, 6, 18, 8, 20]
-    print(s.merge_sort(arr1))
+    # print(s.merge_sort(arr1))
+    s.quick_sort(arr1)
+    print(arr1)
