@@ -34,3 +34,4 @@ def insertNode(root, val):
             break
         else:
             q.append(temp.right)
+
