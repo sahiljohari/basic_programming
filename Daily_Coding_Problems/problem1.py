@@ -9,8 +9,11 @@ def two_sum(num_list, k):
         num_seen.add(first_num)
     return False
 
-if __name__ == "__main__":
+def main():
     arr = [1,2,3,5,10,13,15]
     k = 18
     
     print("Output using first approach:",two_sum(arr, k))
+
+if __name__ == "__main__":
+    main()
