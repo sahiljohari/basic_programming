@@ -11,7 +11,7 @@
 
 def get_original_sentence(words, sentence):
     '''
-    Time complexity: O(s)
+    Time complexity: O(s*w)
     Space complexity: O(w+s) 
     w = size of words dictionary and 
     s = length of sentence
