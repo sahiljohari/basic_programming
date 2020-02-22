@@ -1,3 +1,10 @@
+# Find the median of two sorted arrays.
+# Example,
+# arr1 = [1, 3, 5]
+# arr2 = [2, 4, 6]
+
+# median(arr1, arr2) = 3.5
+
 
 def get_median(arr):
     mid = len(arr) // 2
