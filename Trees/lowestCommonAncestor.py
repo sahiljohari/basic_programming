@@ -1,5 +1,6 @@
 # Program to implement Lowest Common Ancestor problem
-
+# Time complexity: O(n)
+# Space complexity: O(n)
 class Node:
     def __init__(self, val):
         self.val = val
@@ -7,7 +8,7 @@ class Node:
         self.right = None
 
 def lca(tree, n1, n2):
-    if n1 == n2:
+    if n1.val == n2.val:
         return n1
     path_to_n1, path_to_n2 = [], []
     path_to_n1 = pathTo(tree, n1)
@@ -21,21 +22,18 @@ def lca(tree, n1, n2):
         s = path_to_n1.pop()
         t = path_to_n2.pop()
 
-        if s == t:
+        if s.val == t.val:
             prev = s
         else:
             break
-    return prev
+    return prev.val
 
 def pathTo(tree, n):
     if tree is None:
         return None
-    if tree == n:
-        s = []
-        s.append(tree)
-        return s
+    if tree.val == n.val:
+        return [tree]
     
-    left, right = [], []
     left = pathTo(tree.left, n)
     right = pathTo(tree.right, n)
 
@@ -55,11 +53,12 @@ def main():
     root.right = Node(3)
     root.left.left = Node(4)
     root.right.left = Node(5)
+    root.right.right = Node(6)
 
-    n1 = Node(3)
-    n2 = Node(4)
+    assert lca(root, Node(3), Node(4)) == 1, "Test case failure"
+    assert lca(root, Node(5), Node(6)) == 3, "Test case failure"
 
-    print(lca(root, n1, n2))
+    print("All test cases passed.")
 
 if __name__ == "__main__":
     main()
