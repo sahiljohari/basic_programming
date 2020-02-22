@@ -36,6 +36,13 @@ def add_node(head, obj):
             node = node.next
         node.next = obj
 
+def generate_linked_list(nums):
+    input_list = Node(nums[0])
+    for num in nums[1:]:
+        add_node(input_list, Node(num))
+
+    return input_list
+
 def dedup(head):
     '''
     Time complexity: O(n)
@@ -57,17 +64,9 @@ def dedup(head):
     return head
 
 def main():
-    nums = [1,2,3,2,1]
-    input_list = Node(nums[0])
-    for num in nums[1:]:
-        add_node(input_list, Node(num))
-
-    unique_nums = [1,2,3]
-    out_list = Node(unique_nums[0])
-    for num in unique_nums[1:]:
-        add_node(out_list, Node(num))
-
-    assert isEqual(dedup(input_list), out_list) == True, "Test case failure"
+    assert isEqual(dedup(generate_linked_list([1,2,3,2,1])), generate_linked_list([1,2,3])) == True, "Test case failure"
+    assert isEqual(dedup(generate_linked_list([1,1,1,1,1])), generate_linked_list([1])) == True, "Test case failure"
+    assert isEqual(dedup(generate_linked_list([1,2,2,2,1])), generate_linked_list([1,2])) == True, "Test case failure"
 
     print("All test cases passed.")
 
