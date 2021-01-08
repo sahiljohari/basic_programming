@@ -25,13 +25,30 @@ def uniquePaths(m: int, n: int) -> int:
     return findPath(0, 0)
 
 
+# Simple version
+def gridTraveller(m: int, n: int, memo={}) -> int:
+    key = (m, n)
+    if key in memo:
+        return memo[key]
+    if m == 1 and n == 1:
+        return 1
+    if m == 0 or n == 0:
+        return 0
+    memo[key] = gridTraveller(m - 1, n, memo) + gridTraveller(m, n - 1, memo)
+    return memo[key]
+
+
 def main():
     assert uniquePaths(3, 2) == 3
     assert uniquePaths(7, 3) == 28
+
+    assert gridTraveller(3, 2) == 3
+    assert gridTraveller(3, 3) == 6
+    assert gridTraveller(7, 3) == 28
+    assert gridTraveller(18, 18) == 2333606220
 
     print("All test cases passed!")
 
 
 if __name__ == "__main__":
     main()
-
