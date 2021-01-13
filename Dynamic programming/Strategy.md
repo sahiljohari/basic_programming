@@ -27,3 +27,11 @@ The recipe for this approach is:
 - Seed the trivial answer into the table (this is similar to defining a base case in recursive approaches)
 - Iterate through the table
 - Fill further positions based on the current position using certain logic depending on the problem
+
+### Things to remember
+
+- Notice any overlapping subproblems
+- Decide what is the trivially smallest input
+- Think recursively to use Memoization
+- Think iteratively to use Tabulation
+- Draw a strategy first!!
