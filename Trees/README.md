@@ -19,6 +19,7 @@ class Node:
 
 - [Depth First Values](depthFirstValues.py)
 - [Breadth First Values](breadthFirstValues.py)
+- [Tree Includes](treeIncludes.py)
 
 ### Code snippets (Python)
 
