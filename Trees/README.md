@@ -1,3 +1,24 @@
+## Trees
+
+### Binary Tree
+
+- At most 2 children per node
+- Exactly 1 root
+- Exactly 1 path between root and any node
+- **[Edge case]** An empty tree can also be a binary tree
+
+```python
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+```
+
+### Fundamental coding problems
+
+- [Depth First Values](depthFirstValues.py)
+
 ### Code snippets (Python)
 
 - Height of a binary tree
