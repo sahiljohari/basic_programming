@@ -21,8 +21,20 @@ class Node:
 - [Breadth First Values](breadthFirstValues.py)
 - [Tree Includes](treeIncludes.py)
 - [Tree Sum](treeSum.py)
+- [Tree Minimum Value](treeMinValue.py)
+- [Max root to leaf path sum](maxPathSum.py)
 
 ### Code snippets (Python)
+
+- Minimum (or maximum) element of a binary tree
+
+```python
+def tree_min_value(root):
+    if not root:
+        return float('inf')
+
+    return min(root.val, tree_min_value(root.left), tree_min_value(root.right))
+```
 
 - Height of a binary tree
 
