@@ -5,6 +5,10 @@ The function should return a boolean indicating whether or not there exists a di
 
 # depth-first
 def has_path(graph, src, dst):
+    '''
+    Time: O(edges)
+    Space: O(nodes)
+    '''
     if src == dst: return True
 
     for neighbor in graph[src]:
@@ -15,6 +19,10 @@ def has_path(graph, src, dst):
 
 # breadth-first
 def has_path_bfs(graph, src, dst):
+    '''
+    Time: O(edges)
+    Space: O(nodes)
+    '''
     queue = [src]
     
     while queue:
