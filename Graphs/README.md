@@ -68,3 +68,4 @@ def breadth_first_traversal(graph, source):
 
 - [Has Path](hasPath.py)
 - [Undirected Path](undirectedPath.py)
+- [Connected Components Count](connectedComponentsCount.py)
