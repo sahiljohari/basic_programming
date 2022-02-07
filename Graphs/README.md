@@ -72,3 +72,4 @@ def breadth_first_traversal(graph, source):
 - [Largest Component](largestComponent.py)
 - [Shortest Path](shortestPath.py)
 - [Island Count](islandCount.py)
+- [Minimum Island](minimumIsland.py)
